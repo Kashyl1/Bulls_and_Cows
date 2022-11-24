@@ -13,7 +13,7 @@ public class Gra extends Liczby{
             System.exit(0);
         }
         String haslo = losowyGenerator(dlugosc, symbole);
-        wiadomosc(symbole);
+        wiadomosc(symbole, dlugosc);
         System.out.println(haslo);
         int k = 1;
         while(true) {
@@ -35,7 +35,7 @@ public class Gra extends Liczby{
             if (bull > 0 && cows > 0) {
                 System.out.println("Ocena: " + bull + " bull(s) and " + cows + " cow(s).");
             }
-            if (bull == strzal.length()) {
+            if (bull == haslo.length()) {
                 System.out.println("Brawo! Odgadłeś kod!");
                 break;
             }
@@ -85,16 +85,16 @@ public class Gra extends Liczby{
         return symbole;
 
      }
-     void wiadomosc(int symbole) {
+     void wiadomosc(int symbole, int rozmiar) {
          System.out.print("Kod jest przygotowywany: ");
          if (symbole <= 10) {
-             for (int i = 0; i < symbole; i++) {
+             for (int i = 0; i < rozmiar; i++) {
                  System.out.print("*");
              }
              symbole -= 1;
              System.out.println(" (0-" + symbole + ")");
          } else {
-             for (int i = 0; i < symbole; i++) {
+             for (int i = 0; i < rozmiar; i++) {
                  System.out.print("*");
              }
              char a = (char) ((char)symbole + 86);
