@@ -55,7 +55,7 @@ public class Gra extends Liczby{
                 rozmiar = generujLiczbe();
             }
             if (rozmiar <= 0) {
-                System.out.println("Error: Rozmiar nie może być mniejszy niż 1");
+                System.out.println("Error: Rozmiar nie może być mniejszy niż 1!");
                 rozmiar = generujLiczbe();
             }
             return rozmiar;
